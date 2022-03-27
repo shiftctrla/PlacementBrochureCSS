@@ -1,3 +1,45 @@
+{% load static %}
 <div class="profiles" id="pfl">
-  <p>Profiles</p>
+
+  <div class="profile-header">
+    <h1>Student Profiles</h1>
+    <a class="btn btn-secondary" href="#pfl">Download Profiles</a>
+  </div>
+
+
+  <div class="profile-content">
+
+
+
+    {% if students %}
+
+
+    {% for student in students %}
+      <a href="{% url 'profile-detail' student.pk %}">
+      <div class="profile-card">
+        <div class="image-container">
+          <img src="{{student.photo.url}}" alt="{{student.name}}">
+        </div>
+        <h4>{{student.name}}</h4>
+        <p>{{student.email}}</p>
+        <p>+91 {{student.contact_number}}</p>
+        <strong>{{student.skills}}</strong>
+      </div>
+      </a>
+    {% endfor %}
+
+    {% else %}
+
+      <h3 id="empty-message">Profiles added will apear here.</h3>
+
+    {% endif %}
+
+
+
+
+
+
+
+  </div>
+
 </div>

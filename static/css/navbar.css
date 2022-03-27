@@ -4,6 +4,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  
 
 }
 
@@ -24,10 +25,9 @@
   color: white;
 }
 
-.nav-item {
-  transition: 0.1s;
-}
+
 
 .nav-item:hover {
+  transition: 0.1s;
   transform: scale(1.1);
 }
