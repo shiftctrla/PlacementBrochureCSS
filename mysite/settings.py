@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'core/templates'),
+            os.path.join(BASE_DIR, 'account/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -59,6 +61,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+AUTH_USER_MODEL = 'account.Account'
+
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 

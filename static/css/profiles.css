@@ -29,9 +29,8 @@
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  /* background-color: red; */
   box-sizing: border-box;
-  /* padding: 0.5rem; */
+
 }
 
 .profile-content a {
@@ -70,7 +69,7 @@
 .image-container img {
   flex-shrink: 1;
   min-width: 100%;
-  min-height: 100%
+  min-height: 100%;
 }
 
 #empty-message {

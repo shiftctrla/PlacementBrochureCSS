@@ -3,11 +3,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from core import views
+from core import views as core_views
+from account import views as account_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+    path('', core_views.home_view, name='home'),
+    path('profiles/<int:pk>/', core_views.profile_detail_view, name='profile-detail'),
+
+    path('register/', account_views.registration_view, name='register'),
+    path('logout/', account_views.logout_view, name="logout"),
+    path('login/', account_views.login_view, name="login")
 
 
 
