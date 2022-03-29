@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
   width: 100%;
   top: 0;
   left: 0;
@@ -15,15 +14,16 @@
 
 
 .navbar {
-  width: 100%;
+  width: 75%;
   list-style: none;
-  background-color: rgba(123,0,123,0.7);
+  background-color: rgba(123,0,123,0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   height: 2rem;
-  padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 1.5rem 0;
 }
 
 
@@ -121,8 +121,18 @@
 }
 
 .messages {
+  width: 75%;
   box-sizing: border-box;
   padding: .5rem 1rem;
-  border-radius: 0.25rem;
-  transition: fadeout;
+  background-color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.otm {
+  color: white;
+  list-style: none;
 }
