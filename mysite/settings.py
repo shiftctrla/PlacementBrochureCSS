@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'account.apps.AccountConfig',
+    'user_profile.apps.UserProfileConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +79,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 
 # Password validation

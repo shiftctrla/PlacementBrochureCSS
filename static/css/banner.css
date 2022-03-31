@@ -11,7 +11,40 @@
 }
 
 
+.banner-authed {
+  background-image: linear-gradient(purple, purple);
+  min-height: 50%;
+}
+
+
+.banner-message {
+  background-image: linear-gradient(purple, purple);
+  min-height: 50%;
+}
+
+
 .banner-content {
+  color: white;
+}
+
+
+.banner-greeting {
+  font-weight: lighter;
+}
+
+.banner-info {
+  font-weight: lighter;
+
+
+}
+
+#info-msg {
+  font-size: 3rem;
+  width: 75%;
+}
+
+#reset-login {
+  text-decoration: none;
   color: white;
 }
 
