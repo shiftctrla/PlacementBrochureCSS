@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'account.apps.AccountConfig',
-    'user_profile.apps.UserProfileConfig',
+    # 'user_profile.apps.UserProfileConfig',
 ]
 
 MIDDLEWARE = [
@@ -65,8 +65,6 @@ TEMPLATES = [
 
 
 AUTH_USER_MODEL = 'account.Account'
-
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
@@ -80,8 +78,13 @@ DATABASES = {
     }
 }
 
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# GOOGLE SMTP SETTINGS
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 
 
@@ -115,9 +118,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
