@@ -3,7 +3,7 @@
   {% if request.user.is_authenticated %}
 
   <p class="banner-content banner-greeting">Hi, {{request.user.username}}</p>
-  <a class="btn btn-secondary" id="banner-btn" href="#">Go to Dashboard</a>
+  <a class="btn btn-secondary" id="banner-btn" href="{% url 'dashboard' %}">Go to Dashboard</a>
 
 
   {% else %}

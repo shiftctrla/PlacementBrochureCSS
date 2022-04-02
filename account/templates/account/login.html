@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="form-main">
+
+	<div class="form-container">
+		<form class="form"  method="post"> {% csrf_token %}
+
+			<legend class="form-legend"><h1>Login</h1></legend>
+
+			<input type="email" class="form-element text-input" name="email" placeholder="Email address">
+			{% if login_form.email.errors %} <span class="error field-error">{{login_form.email.errors}}</span> {% endif %}
+
+			<input type="password" class="form-element text-input" name="password" placeholder="Password">
+			{% if login_form.password.errors %} <span class="error field-error">{{login_form.password.errors}}</span> {% endif %}
+
+
+			{% if login_form.non_field_errors %}
+				<div >
+					<span class="error non-field-error">{{login_form.non_field_errors}}</span>
+				</div>
+			{% endif %}
+
+
+
+			<button type="submit" class="form-element submit-btn" name="button">Login</button>
+			<div class="help-links">
+				<p><a class="help-link" href="{% url 'register' %}">Register</a></p>
+				<p><a class="help-link" href="{% url 'password_reset' %}">Forgot Password?</a></p>
+			</div>
+
+
+
+		</form>
+	</div>
+
+
+</div>
+
+
+
+{% endblock content %}

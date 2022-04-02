@@ -8,9 +8,12 @@ from core import views as core_views
 from account import views as account_views
 
 urlpatterns = [
+    path('__debug__/', include('debug_toolbar.urls')),
     path('admin/', admin.site.urls),
     path('', core_views.home_view, name='home'),
     path('profiles/<int:pk>/', core_views.profile_detail_view, name='profile-detail'),
+
+    path('dashboard/', account_views.dashboard_view, name='dashboard'),
 
     path('register/', account_views.registration_view, name='register'),
     path('logout/', account_views.logout_view, name="logout"),

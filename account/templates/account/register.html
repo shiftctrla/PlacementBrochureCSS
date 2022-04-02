@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="form-main">
+
+	<div class="form-container">
+		<form class="form"  method="post"> {% csrf_token %}
+
+			<legend class="form-legend"><h1>Register</h1></legend>
+
+			<input type="email" class="form-element text-input" name="email" placeholder="Email address">
+			{% if registration_form.email.errors %} <span class="error field-error">{{registration_form.email.errors}}</span> {% endif %}
+
+
+			<input type="text" class="form-element text-input" name="username" placeholder="Username">
+			{% if registration_form.username.errors %} <span class="error field-error">{{registration_form.username.errors}}</span> {% endif %}
+
+      <input type="password" class="form-element text-input" name="password1" placeholder="Password">
+			{% if registration_form.password1.errors %} <span class="error field-error">{{registration_form.password1.errors}}</span> {% endif %}
+
+
+      <input type="password" class="form-element text-input" name="password2" placeholder="Confirm password">
+			{% if registration_form.password2.errors %} <span class="error field-error">{{registration_form.password2.errors}}</span> {% endif %}
+
+
+			{% if registration_form.non_field_errors %}
+				<div >
+					<span class="error non-field-error">{{registration_form.non_field_errors}}</span>
+				</div>
+			{% endif %}
+
+
+			<button type="submit" class="form-element submit-btn" name="button">Register</button>
+			<div class="help-links">
+				<p><a class="help-link" href="{% url 'login' %}">Already registered? Login</a></p>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+
+
+{% endblock content %}

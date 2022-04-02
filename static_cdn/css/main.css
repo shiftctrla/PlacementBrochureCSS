@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(purple, teal);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.container {
+  margin-top: 1rem;
+  width: 75%;
+  height: auto;
+}
+
+
+.btn {
+  text-decoration: none;
+  padding: 0.5rem;
+
+}
+
+.btn-secondary {
+  color: white;
+  padding: 0.5rem;
+  border: 0.5px solid white;
+  border-radius: 3px;
+
+}
+
+.btn-secondary:hover {
+  color: black;
+  background-color: white;
+}
+
+.separator {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 50%;
+}
