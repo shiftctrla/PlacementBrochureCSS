@@ -1,0 +1,57 @@
+.banner {
+  width: 100%;
+  min-height: 75%;
+  background-image: linear-gradient(purple, teal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+
+.banner-authed {
+  background-image: linear-gradient(purple, purple);
+  min-height: 50%;
+}
+
+
+.banner-message {
+  background-image: linear-gradient(purple, purple);
+  min-height: 50%;
+}
+
+
+.banner-content {
+  color: white;
+}
+
+
+.banner-greeting {
+  font-weight: lighter;
+}
+
+.banner-info {
+  font-weight: lighter;
+
+
+}
+
+#info-msg {
+  font-size: 3rem;
+  width: 75%;
+}
+
+#reset-login {
+  text-decoration: none;
+  color: white;
+}
+
+.banner p {
+  font-size: 4rem;
+}
+
+.banner h4 {
+  font-size: 2rem;
+}
