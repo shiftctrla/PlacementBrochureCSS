@@ -3,7 +3,7 @@
   min-height: 75%;
   background-image: linear-gradient(teal, purple);
   color: white;
-  display: flex;
+  display:  flex                            ;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;

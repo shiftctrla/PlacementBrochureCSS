@@ -15,12 +15,12 @@ body {
   background-image: linear-gradient(purple, teal);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 
 
 .container {
-  margin-top: 3rem;
   width: 75%;
   height: auto;
 }

@@ -15,6 +15,22 @@ setTimeout(() => {
   const otm_box = document.getElementById('message-box')
 
   // 👇️ removes element from DOM
-  otm_box.style.display = 'none';
+  if (otm_box)
+    otm_box.style.display = 'none';
 
 }, 5000)
+
+
+// responsive container height
+let navbar = document.querySelector('.navbar')
+let container = document.querySelector('.container')
+
+
+window.addEventListener('resize', ()=> {
+  container.style.marginTop = `${navbar.offsetHeight}px`
+})
+
+
+window.addEventListener('load', (event) => {
+  container.style.marginTop = `${navbar.offsetHeight}px`
+});
