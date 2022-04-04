@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from account.forms import RegistrationForm, AccountAuthenticationForm
 from django.contrib import messages
-
+from user_profile.models import (
+	Profile,
+	Experience,
+	Education,
+)
 
 def registration_view(request):
 
@@ -75,8 +79,22 @@ def login_view(request):
 
 def dashboard_view(request):
 
+
 	if not request.user.is_authenticated:
 		messages.error(request, 'You must be logged in to access your dashboard.')
 		return redirect('login')
 
-	return render(request, 'account/dashboard.html', {})
+	profile = Profile.objects.get(user=request.user.id)
+	experiences_queryset = Experience.objects.filter(profile=profile)
+	educations_queryset = Education.objects.filter(profile=profile)
+
+	context = {
+		'profile':profile,
+		'experiences':experiences_queryset,
+		'educations':educations_queryset,
+	}
+
+
+
+
+	return render(request, 'account/dashboard.html', context)

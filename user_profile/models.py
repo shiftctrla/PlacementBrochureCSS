@@ -1,15 +1,19 @@
 from django.db import models
 from django.conf import settings
 
-
 class Experience(models.Model):
     designation = models.CharField(max_length=255)
     organisation = models.CharField(max_length=255)
     start_from = models.DateField()
     end_at = models.DateField()
 
-    
-    profile = models.ForeignKey(Profile, on_delete=models.CASCASE)
+
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
+
+
+
+    def __str__(self):
+        return self.designation
 
 
 class Education(models.Model):
@@ -19,7 +23,11 @@ class Education(models.Model):
     score = models.FloatField()
     remarks = models.TextField()
 
-    profile = models.ForeignKey(Profile, on_delete=models.CASCASE)
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.degree
+
 
 class Profile(models.Model):
 
@@ -30,6 +38,8 @@ class Profile(models.Model):
     ]
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=60)
+    last_name = models.CharField(max_length=60)
     profile_pic = models.ImageField()
     date_of_birth = models.DateField()
     contact_number = models.CharField(max_length=10)
@@ -37,3 +47,7 @@ class Profile(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
     resume = models.FileField()
+
+
+    def __str__(self):
+        return self.user.username
