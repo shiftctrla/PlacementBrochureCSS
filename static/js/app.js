@@ -1,12 +1,23 @@
 let dropdown_toggle = document.getElementById('toggle-dropdown')
 let dropdown_menu = document.getElementById('dropdown-menu')
 
+let body_element = document.querySelector('body')
 
 
 
+let fired_dropdown = false;
 dropdown_toggle.addEventListener('click', ()=>{
-  console.log('Element Clicked')
+  fired_dropdown = true;
   dropdown_menu.classList.toggle('active')
+})
+
+body_element.addEventListener('click', ()=>{
+  if (!fired_dropdown) {
+    if (dropdown_menu.classList.contains('active')) {
+      dropdown_menu.classList.remove('active')
+      }
+    }
+  fired_dropdown = false
 })
 
 

@@ -124,7 +124,7 @@
 }
 
 .messages {
-  width: 75%;
+  width: 100%;
   box-sizing: border-box;
   padding: .5rem 1rem;
   background-color: teal;

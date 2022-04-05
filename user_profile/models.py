@@ -29,6 +29,20 @@ class Education(models.Model):
         return self.degree
 
 
+class Project(models.Model):
+    start_date = models.DateTimeField()
+    title = models.CharField(max_length=255)
+    remarks = models.CharField(max_length=255)
+
+    github_repo = models.CharField(max_length=1024, null=True)
+
+
+    def __str__(self):
+        return self.title
+
+
+
+
 class Profile(models.Model):
 
     GENDER_CHOICES = [
