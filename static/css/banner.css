@@ -55,3 +55,14 @@
 .banner h4 {
   font-size: 2rem;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .banner p {
+    font-size: 2rem;
+  }
+
+  .banner h4 {
+    font-size: 1rem;
+  }
+}
