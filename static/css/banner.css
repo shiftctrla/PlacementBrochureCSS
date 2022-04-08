@@ -1,7 +1,7 @@
 .banner {
   width: 100%;
   min-height: 75%;
-  background-image: linear-gradient(purple, teal);
+  background-color: #171717;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +55,6 @@
 .banner h4 {
   font-size: 2rem;
 }
-
 
 @media only screen and (max-width: 600px) {
   .banner p {

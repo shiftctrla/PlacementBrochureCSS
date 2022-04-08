@@ -52,13 +52,11 @@ urlpatterns = [
             ),
         name='password_reset_complete'),
 
-
-
-
-
-
-
 ]
+
+
+handler404 = 'core.views.handle404'
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

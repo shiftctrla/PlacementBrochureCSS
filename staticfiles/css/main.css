@@ -13,12 +13,13 @@ body {
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(purple, teal);
+  background-image: linear-gradient(#000000,#171717); 
+
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
 }
-
 
 
 .container {
@@ -52,4 +53,11 @@ body {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   opacity: 50%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
 }

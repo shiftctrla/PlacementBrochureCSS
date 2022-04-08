@@ -80,14 +80,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 128, 128, 0.9);
+  background-color: #171717;
   color: white;
   font-size: .9rem;
   font-weight: 500;
 }
 
 .submit-btn:hover {
-  background-color: rgba(0, 128, 128, 1);
+  background-color: #000000;
 }
 
 

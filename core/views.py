@@ -27,3 +27,9 @@ def profile_detail_view(request, pk):
     }
 
     return render(request, 'core/profile_detail.html', context)
+
+
+
+
+def handle404(request, exception):
+    return render(request, 'core/error_templates/404.html', {})
