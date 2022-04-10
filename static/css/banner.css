@@ -11,8 +11,14 @@
 }
 
 
+
+
 .banner-authed {
-  background-image: linear-gradient(purple, purple);
+  background-image: url("../assets/banner_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 50%;
 }
 

@@ -1,5 +1,8 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 class Experience(models.Model):
     designation = models.CharField(max_length=255)
@@ -30,12 +33,13 @@ class Education(models.Model):
 
 
 class Project(models.Model):
-    start_date = models.DateTimeField()
     title = models.CharField(max_length=255)
     remarks = models.CharField(max_length=255)
 
     github_repo = models.CharField(max_length=1024, null=True)
 
+
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
@@ -51,17 +55,17 @@ class Profile(models.Model):
         ('O', 'Other'),
     ]
 
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=60)
-    last_name = models.CharField(max_length=60)
-    profile_pic = models.ImageField()
-    date_of_birth = models.DateField()
-    contact_number = models.CharField(max_length=10)
-    address = models.CharField(max_length=255)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=60, default="Student")
+    last_name = models.CharField(max_length=60, null=True)
+    profile_pic = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    date_of_birth = models.DateField(null=True)
+    contact_number = models.CharField(max_length=10, null=True)
+    address = models.CharField(max_length=255, null=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
-    resume = models.FileField()
+    resume = models.FileField(upload_to='resumes', null=True)
 
 
     def __str__(self):
-        return self.user.username
+        return f'{self.user.username} Profile'

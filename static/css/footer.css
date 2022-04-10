@@ -2,11 +2,11 @@ footer {
   width: 100%;
   height: 25%;
   background-color: transparent;
-  color: #000000;
+  color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #171717;
+  border-top: 1px solid #a4508b;
   margin-top: 1rem;
 }
 
@@ -17,5 +17,5 @@ footer p {
 
 footer a {
   text-decoration: none;
-  color: #000000;
+  color: #FFFFFF;
 }

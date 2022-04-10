@@ -1,33 +1,80 @@
 
 .dash {
-  background-color: purple;
-  min-height: 100%;
+  padding-top: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   box-sizing: border-box;
   flex-wrap: wrap;
-  padding: 1rem;
 }
 
 
 .dash-area {
-  height: 100vh;
-  background-color: white;
+
   box-sizing: border-box;
   padding: 1rem;
+  min-height: 100vh;
 }
 
 .dash-sidebar {
-  width: 300px;
-  background-color: rgba(255,255,255, 0.5);
+  width: 25%;
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
+
+}
+
+.dash-link {
+  text-decoration: none;
+  color: #F7F7F7;
+}
+
+
+.dash-btn {
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem .5rem;
+  background-color: #1f1f1f;
+  transition: 0.3s ease-in-out;
+}
+
+.dash-btn:hover {
+  background-color: #a4508b;
+}
+
+.dash-link-text {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 
 .dash-content {
-  width: 900px;
-  background-color: rgba(255,255,255, 0.1);
+  width: 75%;
+  background-image: linear-gradient(-326deg, #5f0a87 0%, #a4508b 74%);
+}
 
 
 
+@media only screen and (max-width: 1200px) {
+  .dash {
+    flex-direction: column;
+  }
+
+
+  .dash-sidebar {
+    width: 100%;
+    min-height: auto;
+
+  }
+
+  .dash-content {
+    width: 100%;
+    min-height: 75vh;
+
+  }
 }

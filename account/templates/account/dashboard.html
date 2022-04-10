@@ -8,11 +8,26 @@
 <div class="dash">
 
   <div class="dash-area dash-sidebar">
-    <p>SideBar</p>
+
+    <a class="dash-link" href="#">
+      <div class="dash-btn">
+        <p class="dash-link-text" >Profile</p>
+      </div>
+    </a>
+
+    <a class="dash-link" href="#">
+      <div class="dash-btn">
+        <p class="dash-link-text" >Settings</p>
+      </div>
+    </a>
+
+
   </div>
 
   <div class="dash-area dash-content">
-    <p>Content</p>
+    {% block dashcontent %}
+      <p>Content</p>
+    {% endblock dashcontent %}
   </div>
 
 </div>

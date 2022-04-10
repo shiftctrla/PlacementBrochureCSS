@@ -1,19 +1,23 @@
 <div {% if request.user.is_authenticated %} class="banner banner-authed" {% else %} class="banner" {% endif %} id="bnr">
 
-  {% if request.user.is_authenticated %}
-
-  <p class="banner-content banner-greeting">Hi, {{request.user.username}}</p>
-  <a class="btn btn-secondary" id="banner-btn" href="{% url 'dashboard' %}">Go to Dashboard</a>
 
 
-  {% else %}
+    {% if request.user.is_authenticated %}
 
-  <h4 class="banner-content">School of Engineering & Technology</h4>
-  <p class="banner-content">Placement Brochure {{date.year}}</p>
-  <h4 class="banner-content">Central University of Kashmir</h4>
-  <a class="btn btn-secondary" id="banner-btn" href="#">Download Brochure</a>
 
-  {% endif %}
+    <p class="banner-content banner-greeting">Hi, {{request.user.profile.first_name}}</p>
+    <a class="btn btn-secondary" id="banner-btn" href="{% url 'dashboard' %}">Go to Dashboard</a>
+
+
+
+    {% else %}
+
+    <h4 class="banner-content">School of Engineering & Technology</h4>
+    <p class="banner-content">Placement Brochure {{date.year}}</p>
+    <h4 class="banner-content">Central University of Kashmir</h4>
+    <a class="btn btn-secondary" id="banner-btn" href="#">Download Brochure</a>
+
+    {% endif %}
 
 
 

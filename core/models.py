@@ -15,7 +15,7 @@ class Student(models.Model):
     contact_number = models.CharField(max_length=10)
     sex = models.CharField(max_length=1, choices=GENDER_CHOICES)
     skills = models.TextField(max_length=500)
-    photo = models.ImageField(null=True)
+    photo = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
 
     def __str__(self):
