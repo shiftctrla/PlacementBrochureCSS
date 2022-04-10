@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from account.forms import RegistrationForm, AccountAuthenticationForm
+from user_profile.forms import ProfileUpdateForm
+
+
 from django.contrib import messages
 from user_profile.models import (
 	Profile,
 	Experience,
 	Education,
 )
+
 
 def registration_view(request):
 
@@ -98,3 +102,32 @@ def dashboard_view(request):
 
 
 	return render(request, 'account/dashboard.html', context)
+
+
+def edit_profile_view(request):
+
+
+	if not request.user.is_authenticated:
+		messages.error(request, 'Nice Try. But lets login first!')
+		return redirect('login')
+
+	if request.POST:
+		profile_update_form = ProfileUpdateForm(
+			request.POST,
+			request.FILES,
+			instance=request.user.profile
+		)
+
+		if profile_update_form.is_valid():
+			profile_update_form.save()
+
+		return redirect('dashboard')
+	else:
+		profile_update_form = ProfileUpdateForm(instance=request.user.profile)
+
+
+	context = {
+		'pedit_form': profile_update_form,
+	}
+
+	return render(request, 'account/profile.html', context)

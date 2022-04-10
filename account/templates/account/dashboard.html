@@ -9,7 +9,7 @@
 
   <div class="dash-area dash-sidebar">
 
-    <a class="dash-link" href="#">
+    <a class="dash-link" href="{% url 'edit-profile' %}">
       <div class="dash-btn">
         <p class="dash-link-text" >Profile</p>
       </div>
@@ -26,7 +26,20 @@
 
   <div class="dash-area dash-content">
     {% block dashcontent %}
-      <p>Content</p>
+
+      <div class="dash-header">
+
+          <img class="profile-photo" src="{{profile.profile_pic.url}}" alt="avatar">
+          <div class="profile-info">
+            <p>+91 {{profile.contact_number}}</p>
+            <h1>{{profile.first_name}} {{profile.last_name}}</h1>
+            <p>{{profile.user.email}}</p>
+          </div>
+
+
+      </div>
+
+
     {% endblock dashcontent %}
   </div>
 

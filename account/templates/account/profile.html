@@ -2,5 +2,10 @@
 
 
 {% block dashcontent %}
-  <p>Profile</p>
+
+    <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+      {{pedit_form.as_p}}
+      <button type="submit" name="button">Save Changes</button>
+    </form>
+
 {% endblock dashcontent %}

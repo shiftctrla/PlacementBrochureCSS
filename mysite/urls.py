@@ -14,6 +14,7 @@ urlpatterns = [
     path('profiles/<int:pk>/', core_views.profile_detail_view, name='profile-detail'),
 
     path('dashboard/', account_views.dashboard_view, name='dashboard'),
+    path('dashboard/profile', account_views.edit_profile_view, name='edit-profile'),
 
     path('register/', account_views.registration_view, name='register'),
     path('logout/', account_views.logout_view, name="logout"),
