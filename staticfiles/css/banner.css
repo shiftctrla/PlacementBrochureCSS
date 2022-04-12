@@ -8,17 +8,22 @@
   align-items: center;
   text-align: center;
   gap: 1rem;
-}
-
-
-
-
-.banner-authed {
-  background-image: url("../assets/banner_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+
+
+.banner {
+  background-image: url("../assets/building_bg.jpg");
+
+}
+
+
+.banner-authed {
+  background-image: url("../assets/banner_bg.jpg");
   min-height: 50%;
 }
 
