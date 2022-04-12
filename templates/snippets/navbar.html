@@ -1,9 +1,6 @@
 <nav class="navbar-container">
 
 
-
-
-
   <ul class="navbar" id="nbr">
     <span class="nav-item home-button"><a href="/"><i class="fa-solid fa-house-chimney"></i></a></span>
 
@@ -16,11 +13,11 @@
 
 
     <div class="dropdown" id="toggle-dropdown">
-      <span id="drawer">
+      <span class="nav-item" id="drawer">
         {% if request.user.is_authenticated %}
           <span>Account</span>
         {% else %}
-
+          <span >More</span>
         {% endif %}
 
         <i class="fa-solid fa-circle-chevron-down"></i>

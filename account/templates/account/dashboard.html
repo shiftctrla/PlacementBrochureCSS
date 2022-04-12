@@ -9,6 +9,15 @@
 
   <div class="dash-area dash-sidebar">
 
+
+    {% block dashlinks %}
+
+    <a class="dash-link" href="{% url 'dashboard' %}">
+      <div class="dash-btn dash-btn-active">
+        <p class="dash-link-text" >Dashboard</p>
+      </div>
+    </a>
+
     <a class="dash-link" href="{% url 'edit-profile' %}">
       <div class="dash-btn">
         <p class="dash-link-text" >Profile</p>
@@ -21,6 +30,7 @@
       </div>
     </a>
 
+    {% endblock dashlinks %}
 
   </div>
 

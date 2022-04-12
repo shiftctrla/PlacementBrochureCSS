@@ -1,11 +1,60 @@
 {% extends 'account/dashboard.html' %}
 
 
+
+{% block dashlinks %}
+
+<a class="dash-link" href="{% url 'dashboard' %}">
+  <div class="dash-btn">
+    <p class="dash-link-text" >Dashboard</p>
+  </div>
+</a>
+
+<a class="dash-link" href="{% url 'edit-profile' %}">
+  <div class="dash-btn dash-btn-active">
+    <p class="dash-link-text" >Profile</p>
+  </div>
+</a>
+
+<a class="dash-link" href="#">
+  <div class="dash-btn">
+    <p class="dash-link-text" >Settings</p>
+  </div>
+</a>
+
+{% endblock dashlinks %}
+
+
+
+
 {% block dashcontent %}
 
     <form method="post" enctype="multipart/form-data"> {% csrf_token %}
       {{pedit_form.as_p}}
       <button type="submit" name="button">Save Changes</button>
     </form>
+
+
+    <form method="post" enctype="multipart/form-data">
+
+      <fieldset>
+        <legend>Edit Profile</legend>
+
+
+        <input type="text" name="first_name" value="{{pedit_form.first_name.value}}">
+
+        <input type="text" name="last_name" value="{{pedit_form.last_name.value}}">
+
+        <input type="file" name="profile_pic" value="{{pedit_form.profile_pic.value}}">
+
+        <input type="date" name="date_of_birth" value="{{pedit_form.date_of_birth.value}}">
+
+        <button type="submit" name="button">Save Changes</button>
+
+      </fieldset>
+
+
+    </form>
+
 
 {% endblock dashcontent %}
